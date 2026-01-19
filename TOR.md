@@ -121,8 +121,8 @@
 | HTTP/REST | API для управления данными | Клиент ↔ Chat Service | 8080 |
 | WebSocket | Реальный времени обмен сообщениями | Клиент ↔ Notification Service | 8082 |
 | gRPC | Межсервисное взаимодействие | Chat Service ↔ Notification Service | 8081 |
-| PostgreSQL | Хранение данных | Chat Service ↔ DB | 5432 |
-| Redis Pub/Sub | Рассылка сообщений | Notification Service ↔ Redis | 6379 |
+| PostgreSQL | Хранение данных | Chat Service ↔ DB | 5433 |
+| Redis Pub/Sub | Рассылка сообщений | Notification Service ↔ Redis | 6380 |
 
 ---
 
