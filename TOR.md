@@ -1147,7 +1147,7 @@ GoMessage
 │   │     ├── redis/
 │   │     └── interfaces.go
 │   ├── service/                     #посредник между transport и repository
-│   └── transport/                   #транспортный уровень: хэндлеры, DTO, middleware
+│   └── transport/                   #транспортный уровень: хэндлеры, DTO
 │          ├── http/
 │          │     ├── dto/            #DTO для unmarshal
 │          │     ├── handlers/      
