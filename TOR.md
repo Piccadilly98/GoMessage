@@ -1133,36 +1133,29 @@ wscat -c "ws://localhost:8082/ws?token=<JWT_TOKEN>&chat_id=<CHAT_ID>"
 
 ---
 
-## Структура проекта
+## Структура проекта(монолит)
 
 ```
-neonchat/
-├── chat-service/
-│   ├── cmd/
-│   │   └── server/main.go
-│   ├── internal/
-│   │   ├── config/
-│   │   ├── handler/
-│   │   ├── service/
-│   │   ├── repository/
-│   │   ├── model/
-│   │   ├── grpc/
-│   │   └── middleware/
-│   ├── migrations/
-│   ├── Dockerfile
-│   └── go.mod
-├── notification-service/
-│   ├── cmd/
-│   │   └── server/main.go
-│   ├── internal/
-│   │   ├── config/
-│   │   ├── handler/
-│   │   ├── service/
-│   │   ├── repository/
-│   │   └── grpc/
-│   ├── proto/
-│   ├── Dockerfile
-│   └── go.mod
+GoMessage
+├── cmd/
+│   └── main/main.go                 #точка входа в программу, только запуск и GS
+├── internal/
+│   ├── config/                      #работа с файлами .env
+│   ├── domain/                      #бизнес модели-структуры для репозитория
+│   ├── repository/                  #объекты и методы для запросов к бд, кэшу 
+│   │     ├── postgres/              #объекты для работы с разными таблицами
+│   │     ├── redis/
+│   │     └── interfaces.go
+│   ├── service/                     #посредник между transport и repository
+│   └── transport/                   #транспортный уровень: хэндлеры, DTO, middleware
+│          ├── http/
+│          │     ├── dto/            #DTO для unmarshal
+│          │     ├── handlers/      
+│          │     └── middleware/
+│          └── websocket/
+│   
+├── migrations/
+├── Dockerfile
 ├── docker-compose.yml
 ├── Makefile
 ├── .env.example
