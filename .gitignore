@@ -30,3 +30,4 @@ go.work.sum
 
 # data
 pg_data
+cmd

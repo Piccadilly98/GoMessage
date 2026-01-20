@@ -4,7 +4,7 @@ import "fmt"
 
 type RegistrationUserRequest struct {
 	Username string `json:"username"`
-	Password string `json:"pasword"`
+	Password string `json:"password"`
 }
 
 func (ru *RegistrationUserRequest) Validate() error {
