@@ -1,3 +1,6 @@
+include .env
+export
+
 help:
 	@echo "Available commands:"
 	@echo "  make up       	 - Start services"
@@ -20,3 +23,10 @@ db:
 
 redis:
 	docker-compose exec redis redis-cli
+
+migrate-up:
+	migrate -path migrations -database ${DATA_BASE_URL} up
+
+migrate-down:
+	migrate -path migrations -database ${DATA_BASE_URL} down
+
