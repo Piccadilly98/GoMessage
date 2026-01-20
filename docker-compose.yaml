@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:18-alpine
+    image: postgres:17-bookworm
     environment:
       POSTGRES_DB: messenger
       POSTGRES_USER: postgres
