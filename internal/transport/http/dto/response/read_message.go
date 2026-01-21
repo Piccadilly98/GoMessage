@@ -8,6 +8,6 @@ type ReadMessageResponse struct {
 	SenderID       string    `json:"sender_id"`
 	SenderUserName string    `json:"sender_username"`
 	Text           string    `json:"text"`
-	CreatedDate    time.Time `json:"sending_at"`
+	CreatedAt      time.Time `json:"sending_at"`
 	IsReceived     bool      `json:"is_received"`
 }

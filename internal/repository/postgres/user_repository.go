@@ -28,7 +28,7 @@ func (up *UserPostrgres) Create(ctx context.Context, req *domain.RegistrationUse
 	INSERT INTO users(login, password_hash)
 	VALUES($1, $2)
 	RETURNING id, login, password_hash, created_date, updated_date;`,
-		req.Login, req.PasswordHash).Scan(&result.ID, &result.Login, &result.PasswordHash, &result.CreatedDate, &result.UpdatedDate)
+		req.Login, req.PasswordHash).Scan(&result.ID, &result.Login, &result.PasswordHash, &result.CreatedAt, &result.UpdatedAt)
 	if err != nil {
 		return nil, err
 	}

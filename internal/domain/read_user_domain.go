@@ -6,6 +6,6 @@ type ReadUserDomain struct {
 	ID           string
 	Login        string
 	PasswordHash string
-	CreatedDate  time.Time
-	UpdatedDate  *time.Time
+	CreatedAt    time.Time
+	UpdatedAt    *time.Time
 }

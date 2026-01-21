@@ -7,7 +7,7 @@ type ReadMessageDomain struct {
 	ChatID      string
 	SenderID    string
 	RecipientID string
-	CreatedDate time.Time
+	CreatedAt   time.Time
 	IsReceived  bool
 	Text        string
 }

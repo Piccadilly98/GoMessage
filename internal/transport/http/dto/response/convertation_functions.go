@@ -8,12 +8,12 @@ import (
 
 func ToResponseDTO(entitie *domain.ReadUserDomain, info *TokenInfo, isAdnin bool) *ResultResponseWithToken {
 	user := &ReadUserResponse{
-		ID:          entitie.ID,
-		Login:       entitie.Login,
-		CreatedDate: entitie.CreatedDate,
+		ID:        entitie.ID,
+		Login:     entitie.Login,
+		CreatedAt: entitie.CreatedAt,
 	}
 	if isAdnin {
-		user.UpdatedDate = entitie.UpdatedDate
+		user.UpdatedAt = entitie.UpdatedAt
 	}
 
 	return &ResultResponseWithToken{
@@ -39,10 +39,10 @@ func ToTokenInfoDTO(token, tokenType string, expiresIn int) (*TokenInfo, error) 
 
 func ToReadChatResponse(entitie *domain.ReadChatDomain) *BasicReadChatResponse {
 	return &BasicReadChatResponse{
-		ID:          entitie.ID,
-		UserID1:     entitie.UserID1,
-		UserID2:     entitie.UserID2,
-		CreatedDate: entitie.CreatedDate,
+		ID:        entitie.ID,
+		UserID1:   entitie.UserID1,
+		UserID2:   entitie.UserID2,
+		CreatedAt: entitie.CreatedAt,
 	}
 }
 
@@ -52,7 +52,7 @@ func ToReadMessageResponse(entitie *domain.ReadMessageDomain, senderUsername str
 		ChatID:         entitie.ChatID,
 		SenderUserName: senderUsername,
 		SenderID:       entitie.SenderID,
-		CreatedDate:    entitie.CreatedDate,
+		CreatedAt:      entitie.CreatedAt,
 		Text:           entitie.Text,
 	}
 }
