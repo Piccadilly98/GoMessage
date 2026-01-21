@@ -38,15 +38,13 @@ func main() {
 	}
 	nowReal := time.Now()
 	wg := sync.WaitGroup{}
-	for i := range 2000 {
+	for i := range 500 {
 		wg.Add(1)
 		go func(i int) {
-			// now := time.Now()
 			_, err := authSvc.HashPassword(context.Background(), fmt.Sprintf("pass+%d%d", i, i))
 			if err != nil {
 				fmt.Printf("number - %d, err: %s\n", i, err.Error())
 			}
-			// fmt.Printf("number - %d, result-%v\n", i, time.Since(now))
 			defer wg.Done()
 		}(i)
 	}

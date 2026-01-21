@@ -13,8 +13,8 @@ import (
 )
 
 const (
-	argonTime    uint32 = 5
-	argonMemory  uint32 = 32 * 1024
+	argonTime    uint32 = 4
+	argonMemory  uint32 = 25 * 1024
 	argonThreads uint8  = 1
 	saltLength          = 16
 	keyLength           = 32
