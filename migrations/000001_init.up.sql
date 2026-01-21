@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users(
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     login VARCHAR(100) UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
     created_date  TIMESTAMP DEFAULT NOW(),
     updated_date  TIMESTAMP
 );
