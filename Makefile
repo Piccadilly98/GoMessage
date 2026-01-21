@@ -30,3 +30,6 @@ migrate-up:
 migrate-down:
 	migrate -path migrations -database ${DATA_BASE_URL} down
 
+pull:	
+	git pull
+	go mod download
