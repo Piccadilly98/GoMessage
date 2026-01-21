@@ -2,12 +2,12 @@ package request
 
 import "fmt"
 
-type RegistrationUserRequest struct {
+type RegistrLoginUserRequest struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
 }
 
-func (ru *RegistrationUserRequest) Validate() error {
+func (ru *RegistrLoginUserRequest) Validate() error {
 	if ru.Username == "" {
 		return fmt.Errorf("invalid username: empty")
 	}
