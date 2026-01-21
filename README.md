@@ -18,8 +18,9 @@ Messenger backend with Go and WebSockets
 **Start container:**
 ```bash
 # With make(recommended)
-make up-build
-
+make start
 # Without make
 docker-compose up --build -d
+git pull origin develop
+migrate -path migrations -database "link_to_data_base" up
 ```     

@@ -33,3 +33,6 @@ migrate-down:
 pull:	
 	git pull
 	go mod download
+
+start: up-build pull migrate-up
+
